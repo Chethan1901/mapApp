@@ -9,6 +9,8 @@ import {
   errorMiddleware,
 } from "../../middleware/validation/index.js";
 import userModel from "../../models/user/index.js";
+import Location from "../../models/location/index.js";
+
 
 
 
@@ -46,6 +48,11 @@ router.post(
       const allusers = new userModel(userData);
 
       await allusers.save();
+
+      const alllocation = new Location();
+      alllocation.user = allusers._id;
+
+      await alllocation.save();
 
       res.status(200).json({ success: "User Signed Up Succesfully" });
     } catch (error) {

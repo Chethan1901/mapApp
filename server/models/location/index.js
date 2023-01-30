@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-let LocationSchema = new mongoose.Schema({
+let locationSchema = new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Users"
@@ -12,7 +12,7 @@ let LocationSchema = new mongoose.Schema({
                 required: true
             },
             locationName: {
-                type: Date,
+                type: String,
                 required: true
             },
             isAdded: {
@@ -23,4 +23,4 @@ let LocationSchema = new mongoose.Schema({
     ]
 })
 
-export default mongoose.model("Location", LocationSchema, "userLocation");
+export default mongoose.model("Location", locationSchema, "userLocation");

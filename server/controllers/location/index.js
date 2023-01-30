@@ -28,8 +28,6 @@ router.post("/", authMiddleware, locationValidation(), errorMiddleware, async (r
       };
 
       console.log("----------",location_data)
-
-      console.log("----------",locationData)
   
       locationData.location.push(location_data);
   
